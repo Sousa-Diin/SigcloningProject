@@ -1,5 +1,7 @@
 package sigcloneproject;
 
+import java.util.Scanner;
+
 /** @author wildes  */
 public class  Endereco {
     
@@ -67,6 +69,30 @@ public class  Endereco {
 
     private void setNumero(int numero) {
         this.numero = numero;
+    }
+    public String setAlteraDadosPessoais(){
+        
+        Scanner entrada = new Scanner(System.in);
+        char op =(char) entrada.nextInt();
+        entrada.nextLine();
+        switch(op){
+            case '1':
+                setPais(entrada.nextLine());
+                break;
+            case '2':
+                break;
+            case '3':
+                break;
+            case '4':
+                break;
+            case '5':
+                break;
+            case '6':
+                break;
+            default:
+                System.out.println("opcão invalida.");
+        }
+        return  String.format("opcão invalida.");
     }
 
     @Override
