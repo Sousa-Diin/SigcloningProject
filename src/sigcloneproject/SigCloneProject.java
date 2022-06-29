@@ -7,23 +7,39 @@ public class SigCloneProject {
     /** @param args the command line arguments*/
     public static void main(String[] args) {
        
-        AutenticacaoDoSistema testeLogin, testeLogin2;
+        Scanner scanner =new Scanner(System.in);
+
+        //Pessoa p = new Pessoa();//Construtor padrão
+        Endereco end = new Endereco();//Construtor padrão
+        Discente d, d1;
+        d = new Discente("ECA","112233","Wildes",27,'M',"11170277733"
+                        ,"11222077","35999001122","wildes@gmail.com");//Construtor padrão
+      
+        System.out.println("Digite o pais: ");
+        end.setPais(scanner.nextLine());
+        System.out.println("Digite o estado: ");
+        end.setEstado(scanner.nextLine());
+        System.out.println("Digite o municipio: ");
+        end.setMunicipio(scanner.nextLine());
+        System.out.println("Digite o bairro: ");
+        end.setBairro(scanner.nextLine());
+        System.out.println("Digite o longradouro: ");
+        end.setLongradouro(scanner.nextLine());
+        System.out.println("Digite o cep: ");
+        end.setCep(scanner.nextLine());
+        System.out.println("Digite o numero: ");
+        end.setNumero(scanner.nextInt());
         
-        testeLogin = new AutenticacaoDoSistema ("wildesDev","@3170d35");
-        testeLogin2 = new AutenticacaoDoSistema ("devjoao","@61a90d5");
+        d1 = new Discente("ABI","114433","Alex",37,'M',"11170244433"
+                        ,"11333077","35988001132","alex@gmail.com");
+        d1.setEndereco(end);//Associação
         
-        Discente discente;
-        Scanner entrada = new Scanner(System.in);
-        System.out.println("");
-        discente = new Discente();
-       
-        System.out.println(testeLogin.toString());
-        System.out.println(testeLogin2.toString());
-        System.out.println(testeLogin2.setRecuperarSenha("11870274644"));
-        testeLogin.setCancelLogin();
-               
-        System.out.println(testeLogin2.toString());
-        System.out.println(testeLogin.toString());
+        System.out.println("\n");
+        System.out.println(d.imprimirDadosPessoais());
+        System.out.println(d.dadosDoDiscente());
+        System.out.println(d1.imprimirDadosPessoais());  
+        
+        
     }
     
 }

@@ -1,31 +1,52 @@
 package sigcloneproject;
+
+
 /**  @author wildes */
 // CLASSE PROGENITORA
 public abstract class Pessoa {
     
     //Especificação de {Reitor; Docente; Discente; Funcionario; Terceirizado ...}
     // Atributos 
-    private String nome;
-    private String nasc;
-    private String sexo;
-    private long cpf;
-    private long rg;
-    private long tel;
-    private Endereco residencia;
-    private String email;
-    private String[] filiacao;
+     
+    protected String nome;
+    protected int idade;
+    protected char sexo;
+    protected String cpf;
+    protected String rg;
+    protected String tel;
+    protected Endereco endereco;
+    protected String email;
+    
+    //construct default
+    public Pessoa(){
+        endereco = new Endereco();
+    }
 
-    public Pessoa(String nome, String nasc, String sexo, long cpf, long rg, long tel, Endereco residencia, String email, String[] filiacao) {
+    public Pessoa(String nome, int idade, char sexo, String cpf, String rg, String tel, String email) {
         this.nome = nome;
-        this.nasc = nasc;
+        this.idade = idade;
         this.sexo = sexo;
         this.cpf = cpf;
         this.rg = rg;
         this.tel = tel;
-        this.residencia = residencia;
         this.email = email;
-        this.filiacao = filiacao;
+        endereco = new Endereco();
     }
+    
+    public Pessoa(String nome, int idade, char sexo, String cpf, String rg, String tel, String email, Endereco endereco) {
+        this.nome = nome;
+        this.idade = idade;
+        this.sexo = sexo;
+        this.cpf = cpf;
+        this.rg = rg;
+        this.tel = tel;
+        this.email = email;
+        this.endereco = endereco;
+    }
+    
+    
+    
+    //métodos de acesso
 
     public String getNome() {
         return nome;
@@ -35,52 +56,52 @@ public abstract class Pessoa {
         this.nome = nome;
     }
 
-    public String getNasc() {
-        return nasc;
+    public int getIdade() {
+        return idade;
     }
 
-    public void setNasc(String nasc) {
-        this.nasc = nasc;
+    public void setIdade(int idade) {
+        this.idade = idade;
     }
 
-    public String getSexo() {
+    public char getSexo() {
         return sexo;
     }
 
-    public void setSexo(String sexo) {
+    public void setSexo(char sexo) {
         this.sexo = sexo;
     }
 
-    public long getCpf() {
+    public String getCpf() {
         return cpf;
     }
 
-    public void setCpf(long cpf) {
+    public void setCpf(String cpf) {
         this.cpf = cpf;
     }
 
-    public long getRg() {
+    public String getRg() {
         return rg;
     }
 
-    public void setRg(long rg) {
+    public void setRg(String rg) {
         this.rg = rg;
     }
 
-    public long getTel() {
+    public String getTel() {
         return tel;
     }
 
-    public void setTel(long tel) {
+    public void setTel(String tel) {
         this.tel = tel;
     }
 
-    public Endereco getResidencia() {
-        return residencia;
+    public Endereco getEndereco() {
+        return endereco;
     }
 
-    public void setResidencia(Endereco residencia) {
-        this.residencia = residencia;
+    public void setEndereco(Endereco endereco) {
+        this.endereco = endereco;
     }
 
     public String getEmail() {
@@ -90,20 +111,15 @@ public abstract class Pessoa {
     public void setEmail(String email) {
         this.email = email;
     }
-
-    public String[] getFiliacao() {
-        return filiacao;
-    }
-
-    public void setFiliacao(String[] filiacao) {
-        this.filiacao = filiacao;
-    }
-
-    @Override
-    public String toString() {
-        return "Pessoa{" + "nome=" + nome + ", nasc=" + nasc + ", sexo=" + sexo + ", cpf=" + cpf + ", rg=" + rg + ", tel=" + tel + ", residencia=" + residencia + ", email=" + email + ", filiacao=" + filiacao + '}';
-    }
     
+    //Impressão de dados
+
+    public String imprimirDadosPessoais() {
+        return "Pessoa{" + "nome=" + nome + "\n, idade=" + idade + 
+                "\n, sexo=" + sexo + "\n, cpf=" + cpf + "\n, rg=" + rg +
+                "\n, tel=" + tel + "\n, endereco=" + endereco.imprimir() + 
+                "\n, email=" + email + '}';
+    }
     
     
 }

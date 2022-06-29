@@ -9,8 +9,11 @@ public class AutenticacaoDoSistema {
     private String password;
     private boolean status = false;
 
-    
-     //Method for create and authenticate
+    //default
+    public AutenticacaoDoSistema(){
+        
+    }
+    //Method for create and authenticate
     public AutenticacaoDoSistema(String login, String password) {
         this.login = login;
         this.password = password;
@@ -20,18 +23,7 @@ public class AutenticacaoDoSistema {
     
     
     //method for remember Login
-    public AutenticacaoDoSistema (String password){
-        
-        this.password = password;
-    }
     
-    /*public String getLogin (){
-        return login;
-    }
-    
-    private void setLogin(String newLogin){
-        login = newLogin;
-    }*/
     
     private String getPassword(){
         return password;
@@ -80,6 +72,7 @@ public class AutenticacaoDoSistema {
 
     @Override
     public String toString() {
-        return "AutenticacaoDoSistema{" + "login=" + login + ", password=" + password + ", status=" + status + '}';
+        return "AutenticacaoDoSistema{" + "login criado com sucesso" + 
+                "\n,login=" + login + "\n, Ativo= " + status + '}';
     }
 }

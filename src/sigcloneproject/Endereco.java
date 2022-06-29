@@ -1,6 +1,6 @@
 package sigcloneproject;
 
-import java.util.Scanner;
+//import java.util.Scanner;
 
 /** @author wildes  */
 public class  Endereco {
@@ -12,22 +12,16 @@ public class  Endereco {
     private String municipio;
     private String bairro;
     private String longradouro;
+    private String cep;
     private int numero;
 
-    public Endereco(String pais, String estado, String municipio, String bairro, String longradouro, int numero) {
-        this.pais = pais;
-        this.estado = estado;
-        this.municipio = municipio;
-        this.bairro = bairro;
-        this.longradouro = longradouro;
-        this.numero = numero;
-    }
 
+    //Métodos de acesso
     public String getPais() {
         return pais;
     }
 
-    private void setPais(String pais) {
+    public void setPais(String pais) {
         this.pais = pais;
     }
 
@@ -35,7 +29,7 @@ public class  Endereco {
         return estado;
     }
 
-    private void setEstado(String estado) {
+    public void setEstado(String estado) {
         this.estado = estado;
     }
 
@@ -43,7 +37,7 @@ public class  Endereco {
         return municipio;
     }
 
-    private void setMunicipio(String municipio) {
+    public void setMunicipio(String municipio) {
         this.municipio = municipio;
     }
 
@@ -51,7 +45,7 @@ public class  Endereco {
         return bairro;
     }
 
-    private void setBairro(String bairro) {
+    public void setBairro(String bairro) {
         this.bairro = bairro;
     }
 
@@ -59,7 +53,7 @@ public class  Endereco {
         return longradouro;
     }
 
-    private void setLongradouro(String longradouro) {
+    public void setLongradouro(String longradouro) {
         this.longradouro = longradouro;
     }
 
@@ -67,9 +61,19 @@ public class  Endereco {
         return numero;
     }
 
-    private void setNumero(int numero) {
+    public void setNumero(int numero) {
         this.numero = numero;
     }
+
+    public String getCep() {
+        return cep;
+    }
+
+    public void setCep(String cep) {
+        this.cep = cep;
+    }
+    
+   /* 
     public String setAlteraDadosPessoais(){
         
         Scanner entrada = new Scanner(System.in);
@@ -93,15 +97,13 @@ public class  Endereco {
                 System.out.println("opcão invalida.");
         }
         return  String.format("opcão invalida.");
-    }
+    }*/
 
-    @Override
-    public String toString() {
-        return "Endereco{" + "pais=" + pais + ", estado=" + estado + 
-                ", municipio=" + municipio + ", bairro=" + bairro + 
-                ", longradouro=" + longradouro + ", numero=" + numero + '}';
-    }
-    
-   
-    
+
+    public String imprimir() {
+        return "Endereco{" + "pais=" + pais + 
+                "\n, estado=" + estado + "\n, municipio=" + municipio + 
+                "\n, bairro=" + bairro + "\n, longradouro=" + longradouro + 
+                "\n, cep=" + cep + "\n, numero=" + numero + '}';
+    }   
 }
