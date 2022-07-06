@@ -6,3 +6,4 @@ build/classes/.netbeans_update_resources
 *.jar
 *.mf
 *.properties
+*.iml
